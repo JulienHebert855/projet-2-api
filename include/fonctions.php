@@ -28,16 +28,6 @@ function ConversionForfaitSQLEnObjet($forfaitSQL) {
 
     return $forfaitOBJ;
 
-}   
-
-function ConversionCommentaireSQLEnObjet($commentaireSQL) {
-    $commentaireOBJ = new stdClass();
-    $commentaireOBJ->nomClient = $commentaireSQL["nomClient"];
-    $commentaireOBJ->dateCommentaire = $commentaireSQL["dateCommentaire"];
-    $commentaireOBJ->commentaire = $commentaireSQL["commentaire"];
-
-    return $commentaireOBJ;
-
-}  
+} 
 
 ?>
