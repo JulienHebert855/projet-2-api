@@ -44,20 +44,6 @@ case 'GET':  // GESTION DES DEMANDES DE TYPE GET
 		echo json_encode($listeForfaitsObj, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
 		$requete->close();
 
-
-		$requete = $mysqli->query("SELECT * FROM commentaires");
-		$listeCommentairesObj = [];
-
-		while ($commentaireSQL = $requete->fetch_assoc()) {
-			// Convesion de l'objet au format JSON désiré
-			$commentaireObj = ConversionCommentaireSQLEnObjet($commentaireSQL);
-
-			// Ajout du Cégep à la liste
-			array_push($listeCommentairesObj, $commentaireObj);
-		}
-
-		echo json_encode($listeCommentairesObj, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-		$requete->close();
 	}
 	break;
 case 'POST':  // GESTION DES DEMANDES DE TYPE POST
