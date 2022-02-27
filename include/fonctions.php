@@ -5,6 +5,7 @@
 // devant être retourné par l'API. 
 function ConversionForfaitSQLEnObjet($forfaitSQL) {
     $forfaitOBJ = new stdClass();
+    $forfaitOBJ->id = $forfaitSQL["id"];
     $forfaitOBJ->destination = $forfaitSQL["destination"];
 
     $forfaitOBJ->villeDepart = $forfaitSQL["villeDepart"];
@@ -24,10 +25,20 @@ function ConversionForfaitSQLEnObjet($forfaitSQL) {
 
     $forfaitOBJ->rabais = $forfaitSQL["rabais"];
 
-    $forfaitOBJ->vedette = $forfaitSQL["vedette"];
+    $forfaitOBJ->vedette = boolval($forfaitSQL["vedette"]);
 
     return $forfaitOBJ;
 
-} 
+}   
+
+function ConversionCommentaireSQLEnObjet($commentaireSQL) {
+    $commentaireOBJ = new stdClass();
+    $commentaireOBJ->nomClient = $commentaireSQL["nomClient"];
+    $commentaireOBJ->dateCommentaire = $commentaireSQL["dateCommentaire"];
+    $commentaireOBJ->commentaire = $commentaireSQL["commentaire"];
+
+    return $commentaireOBJ;
+
+}  
 
 ?>
